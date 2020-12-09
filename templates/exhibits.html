@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exhibits</title>
+</head>
+
+<body>
+    <H2><font face="Montserrat">Exhibits</H2>
+
+    {% for exhibit in exhibits %}
+        {{ exhibit["name"] }}({{ exhibit["creation_year"] }}),
+        {{ exhibit['type'] }}<br>
+    {% endfor %}
+
+    <P>
+    <A href = "/exhibits/add">
+        Add exhibit
+    </A><br>
+    <A href = "/exhibits/remove">
+        Remove exhibit
+    </A>
+ 
+    <P>
+    <A href = "/">
+        Back to Main page
+    </A>
+</body>
+
+</html>

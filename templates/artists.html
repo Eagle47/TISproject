@@ -1,0 +1,50 @@
+<head>
+    <meta charset="utf-8">
+    <title>Artists</title>
+</head>
+
+<body>
+    <H2><font face="Montserrat">Artists</H2>
+
+    {% for artist in artists %}
+        <A href = "artists/{{ artist["id"] }}">
+            {{ artist["name"] }} (
+            {% if artist["birth_year"] != None %}
+                {{ artist["birth_year"] }}
+            {% else %}
+            {% endif %}
+            -
+            {% if artist["death_year"] != None %}
+                {{ artist["death_year"] }}
+            {% else %}
+            {% endif %}
+            )
+        </A><br>
+    {% endfor %}
+
+    <P>
+    <A href = "/artists/add">
+        Add artist
+    </A><br>
+    <A href = "/artists/add_exhibit">
+        Add exhibit to artist
+    </A><br>
+    <A href = "/artists/remove">
+        Remove artist
+    </A>
+
+    <P>
+    <A href = "/artists/add_country">
+        Add country
+    </A><br>
+    <A href = "/artists/remove_country">
+        Remove country
+    </A>
+
+    <P>
+    <A href = "/">
+        Back to Main page
+    </A>
+</body>
+
+</html>
